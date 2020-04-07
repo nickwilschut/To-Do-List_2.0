@@ -20,7 +20,7 @@
 		<!--Users-->
 		<div class="card border-primary mb-3" id="users">
 		    <div class="card-header text-primary">
-		    	Users <a href="<?=URL?>main/create"><i class="fas fa-user-plus text-success ml-2 float-right mt-1"></i></a>
+		    	Users <a href="<?=URL?>controllers/Users"><i class="fas fa-user-plus text-success ml-2 float-right mt-1"></i></a>
 		    </div>
 		    <div class="card-body text-dark">
 			    <table class="table table-striped border">
