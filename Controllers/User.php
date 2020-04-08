@@ -8,9 +8,9 @@ class User extends MainController {
 	include (ROOT . 'Models/Users.php');
 
 	$query = new MainModel($db);
-	$sanitize = new MainController;
+	$validation = new MainController;
 
-	$data = array($sanitize->stringSanitize('hello'),$sanitize->stringSanitize('world'));
+	$data = array($validation->cleanString('hello'),$validation->cleanString('world'));
 	$col = array('col1','col2');
 
 	$query->insert($table, $data, $col);
