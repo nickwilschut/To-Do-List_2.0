@@ -7,8 +7,8 @@
 
 	// Try to connect to database.
 	try {
-		$DB_con = new PDO("mysql:host={$DB_host};dbname={$DB_name}",$DB_user,$DB_pass);
-		$DB_con->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+		$db = new PDO("mysql:host={$DB_host};dbname={$DB_name}",$DB_user,$DB_pass);
+		$db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 	}
 
 	// Display error if needed.
@@ -16,8 +16,8 @@
 		echo $e->getMessage();
 	}
 
-	include_once 'MainController.php';
+	include_once 'MainModel.php';
 
-	$MainController = new MainController($DB_con);
+	$MainModel = new MainModel($db);
 
 ?>
