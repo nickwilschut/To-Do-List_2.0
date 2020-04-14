@@ -13,7 +13,8 @@ class User extends MainController {
 	$data = array($validation->cleanString('hello'),$validation->cleanString('world'));
 	$col = array('col1','col2');
 
-	$query->insert($table, $data, $col);
+	//$query->insert($table, $data, $col);
+	$query->select($table, $col, $fields, $param);
 }
 
 ?>
