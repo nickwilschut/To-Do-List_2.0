@@ -1,9 +1,10 @@
 <?php
+require("../models/mainmodel.php");
 
-function loadIndex () {
-	$users = loadAll('users');
-	render('view/users', ['users' => $users]);
+if ($_POST['query'] == 'insert') {
+	createUser($_POST);
 }
+
 
 
 

@@ -2,8 +2,8 @@
 <div class="modal fade" id="userModal" tabindex="-1" role="dialog" aria-hidden="true">
 	<div class="modal-dialog" role="document">
 	    <div class="modal-content">
-		    <div class="modal-header">
-				<div class="row text-dark ml-1">
+		    <div class="modal-header btn-light">
+				<div class="row text-secondary ml-1">
 					Create / Add
 				</div>
 		        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
@@ -15,9 +15,10 @@
 				<div class="card border-primary mb-3">
 				    <div class="card-header text-primary">Add user</div>
 				    <div class="card-body text-dark">
-				    <form name="create" method="post" action="create">
-						<form method="post" action="model/mainmodel"/>
+				    <form method="post" action="controllers/maincontroller.php">
+						<!-- <form method="post" action="controllers/maincontroller"/> -->
 						<input type="hidden" name="table" value="users"/>
+						<input type="hidden" name="query" value="insert"/>
 
 					 	<label for="name"><b>name</b></label>
 					    <input type="text" name="name" class="form-control mb-4" placeholder="Enter name" required>
