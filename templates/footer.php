@@ -1,7 +1,9 @@
+				<!--End page content-->
 			</div>
 		</div>
 	</div>			
-</div><!-- end container div -->
+</div>
+<!--End container div-->
 </body>
 </html>
 

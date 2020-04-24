@@ -1,8 +1,29 @@
+<?php
 
+$servername = "localhost";
+$username = "root";
+$password = "mysql";
+$dbname = "ToDoList";
+try {
+    $conn = new PDO("mysql:host=$servername;dbname=$dbname", $username, $password);
+    $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+    $stmt = $conn->prepare("SELECT * FROM users"); 
+
+    $stmt->execute();
+
+    $result = $stmt->setFetchMode(PDO::FETCH_ASSOC); 
+}
+
+catch(PDOException $e) {
+    echo "Error: " . $e->getMessage();
+}
+$conn = null;
+
+?>
 
 <div class="col-2 bg-light border-right sidenav">
 	<div class="row">
-		<a href="<?=URL?>main/index" class="text-secondary mx-auto mt-4 h1">To do lists.</a>
+		<a href="#" class="text-secondary mx-auto mt-4 h1">To do lists.</a>
 	</div>
 </div>
 
@@ -13,7 +34,14 @@
 			<!--Users-->
 			<div class="card border-primary mb-3" id="users">
 			    <div class="card-header text-primary">
-			    	Users <a href="#"><i class="fas fa-user-plus text-success ml-2 float-right mt-1"></i></a>
+			    	Users 
+					<?php 
+						require("userCreate.php");
+					?>
+			    	<!-- Button trigger modal -->
+					<button type="button" class="btn btn-success float-right" data-toggle="modal" data-target="#userModal">
+						<i class="fas fa-user-plus"></i>
+					</button>
 			    </div>
 			    <div class="card-body text-dark">
 					<table class="table table-striped border">
