@@ -36,10 +36,10 @@ $conn = null;
 			    <div class="card-header text-primary">
 			    	Users 
 					<?php 
-						require("userCreate.php");
+						require("userCRUD.php");
 					?>
 			    	<!-- Button trigger modal -->
-					<button type="button" class="btn btn-success float-right" data-toggle="modal" data-target="#userModal">
+					<button type="button" class="btn btn-success float-right" data-toggle="modal" data-target="#userInsert">
 						<i class="fas fa-user-plus"></i>
 					</button>
 			    </div>
@@ -60,9 +60,17 @@ $conn = null;
 								<td><?=$user["name"]?></td>
 						    	<td><?=$user["username"]?></td>
 						    	<td>
-						      		<a href="#" type="button" class="btn btn-primary mt-1"><i class="far fa-eye"></i></a>
-						      		<a href="#" type="button" class="btn btn-warning text-white mt-1"><i class="fas fa-edit"></i></a>
-								  	<a href="#" type="button" class="btn btn-danger mt-1"><i class="far fa-trash-alt"></i></a>
+						      		<button type="button" class="btn btn-primary mt-1" data-toggle="modal" data-target="#userInsert">
+										<i class="far fa-eye"></i>
+									</button>
+
+						      		<button type="button" class="btn btn-warning text-white mt-1" data-toggle="modal" data-target="#userUpdate">
+										<i class="fas fa-edit"></i>
+									</button>
+
+								  	<button type="button" class="btn btn-danger mt-1" data-toggle="modal" data-target="#userDelete">
+										<i class="far fa-trash-alt"></i>
+									</button>
 							  	</td>	
 							</tr>
 							<?php
