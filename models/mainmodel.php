@@ -1,7 +1,7 @@
 <?php
 
 
-function loadAll($table) {
+/*function loadAll($table) {
 	$servername = "localhost";
 	$username = "root";
 	$password = "mysql";
@@ -21,7 +21,7 @@ function loadAll($table) {
 	    echo "Error: " . $e->getMessage();
 	}
 	$conn = null;
-}
+}*/
 
 // Create function
 function createUser($data) {
@@ -55,7 +55,7 @@ function updateUser($data) {
 	$servername = "localhost";
 	$username = "root";
 	$password = "mysql";
-	$dbname = "planningtool";
+	$dbname = "ToDoList";
 	$table = $_POST['table']; 
 
 	try {
@@ -75,6 +75,31 @@ function updateUser($data) {
 	catch(PDOException $e) {
 	    echo $sql . "<br>" . $e->getMessage();
 	} 
+	$conn = null;
+}
+
+function deleteUser($data) {
+	$servername = "localhost";
+	$username = "root";
+	$password = "mysql";
+	$dbname = "ToDoList";
+	$table = $_POST['table']; 
+	
+	try {
+	    $conn = new PDO("mysql:host=$servername;dbname=$dbname", $username, $password);
+	    $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+		
+		$sql = "DELETE FROM $table WHERE id= :id";
+
+		$query = $conn->prepare($sql);
+		$query->bindParam(':id', $_POST["id"]);
+
+
+	    $query->execute();
+	}
+	catch(PDOException $e) {
+	    echo $sql . "<br>" . $e->getMessage();
+	}
 	$conn = null;
 }
 

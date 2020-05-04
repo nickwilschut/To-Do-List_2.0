@@ -7,6 +7,11 @@ if ($_POST['query'] == 'insert') {
 
 if ($_POST['query'] == 'delete') {
 	//createUser($_POST);
+	//print_r($_POST['id']);
+	deleteUser($_POST);
+}
+
+if ($_POST['query'] == 'update') {
 	print_r($_POST['id']);
 }
 

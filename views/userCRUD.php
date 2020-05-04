@@ -56,12 +56,12 @@
 		    <div class="modal-body">
 
 				<div class="card border-primary mb-3">
-				    <div class="card-header text-primary">Add user</div>
+				    <div class="card-header text-primary">update user</div>
 				    <div class="card-body text-dark">
 				    <form method="post" action="controllers/maincontroller.php">
 						<!-- <form method="post" action="controllers/maincontroller"/> -->
 						<input type="hidden" name="table" value="users"/>
-						<input type="hidden" name="query" value="insert"/>
+						<input type="hidden" name="query" value="update"/>
 
 					 	<label for="name"><b>name</b></label>
 					    <input type="text" name="name" class="form-control mb-4" placeholder="Enter name" required>
@@ -74,7 +74,7 @@
 
 						<div class="float-right">
 		        			<button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
-						    <button type="submit" class="btn btn-success">Send</button>
+						    <button type="submit" class="btn btn-success">Update</button>
 						</div>
 					</form>
 				    </div>
@@ -99,7 +99,7 @@
 		    <div class="modal-body">
 
 				<div class="card border-primary mb-3">
-				    <div class="card-header text-primary">Add user</div>
+				    <div class="card-header text-primary">Delete user</div>
 				    <div class="card-body text-dark">
 				    <form method="post" action="controllers/maincontroller.php">
 						<input type="hidden" name="table" value="users"/>
