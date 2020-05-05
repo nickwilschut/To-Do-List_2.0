@@ -3,39 +3,33 @@
 	<div class="modal-dialog" role="document">
 	    <div class="modal-content">
 		    <div class="modal-header btn-light">
-				<div class="row text-secondary ml-1">
-					Create / Add
+				<div class="row text-primary ml-1">
+					Create / Add user
 				</div>
 		        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
 		            <span aria-hidden="true">&times;</span>
 		        </button>
 		    </div>
 		    <div class="modal-body">
+			    <form method="post" action="controllers/maincontroller.php">
+					<!-- <form method="post" action="controllers/maincontroller"/> -->
+					<input type="hidden" name="table" value="users"/>
+					<input type="hidden" name="query" value="insert"/>
 
-				<div class="card border-primary mb-3">
-				    <div class="card-header text-primary">Add user</div>
-				    <div class="card-body text-dark">
-				    <form method="post" action="controllers/maincontroller.php">
-						<!-- <form method="post" action="controllers/maincontroller"/> -->
-						<input type="hidden" name="table" value="users"/>
-						<input type="hidden" name="query" value="insert"/>
+				 	<label for="name"><b>name</b></label>
+				    <input type="text" name="name" class="form-control mb-4" placeholder="Enter name" required>
 
-					 	<label for="name"><b>name</b></label>
-					    <input type="text" name="name" class="form-control mb-4" placeholder="Enter name" required>
+					<label for="username"><b>username</b></label>
+				    <input type="text" name="username" class="form-control mb-4" placeholder="Enter username" required>
 
-						<label for="username"><b>username</b></label>
-					    <input type="text" name="username" class="form-control mb-4" placeholder="Enter username" required>
+				    <label for="password"><b>password</b></label>
+				    <input type="text" name="password" class="form-control mb-4" placeholder="Enter password" required>
 
-					    <label for="password"><b>password</b></label>
-					    <input type="text" name="password" class="form-control mb-4" placeholder="Enter password" required>
-
-						<div class="float-right">
-		        			<button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
-						    <button type="submit" class="btn btn-success">Send</button>
-						</div>
-					</form>
-				    </div>
-				</div>
+					<div class="float-right">
+	        			<button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+					    <button type="submit" class="btn btn-success">Send</button>
+					</div>
+				</form>
 		    </div>
 		</div>
 	</div>
@@ -46,39 +40,33 @@
 	<div class="modal-dialog" role="document">
 	    <div class="modal-content">
 		    <div class="modal-header btn-light">
-				<div class="row text-secondary ml-1">
-					Update
+				<div class="row text-primary ml-1">
+					Update user
 				</div>
 		        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
 		            <span aria-hidden="true">&times;</span>
 		        </button>
 		    </div>
 		    <div class="modal-body">
+			    <form method="post" action="controllers/maincontroller.php">
+					<!-- <form method="post" action="controllers/maincontroller"/> -->
+					<input type="hidden" name="table" value="users"/>
+					<input type="hidden" name="query" value="update"/>
 
-				<div class="card border-primary mb-3">
-				    <div class="card-header text-primary">update user</div>
-				    <div class="card-body text-dark">
-				    <form method="post" action="controllers/maincontroller.php">
-						<!-- <form method="post" action="controllers/maincontroller"/> -->
-						<input type="hidden" name="table" value="users"/>
-						<input type="hidden" name="query" value="update"/>
+				 	<label for="name"><b>name</b></label>
+				    <input type="text" name="name" class="form-control mb-4" placeholder="Enter name" required>
 
-					 	<label for="name"><b>name</b></label>
-					    <input type="text" name="name" class="form-control mb-4" placeholder="Enter name" required>
+					<label for="username"><b>username</b></label>
+				    <input type="text" name="username" class="form-control mb-4" placeholder="Enter username" required>
 
-						<label for="username"><b>username</b></label>
-					    <input type="text" name="username" class="form-control mb-4" placeholder="Enter username" required>
+				    <label for="password"><b>password</b></label>
+				    <input type="text" name="password" class="form-control mb-4" placeholder="Enter password" required>
 
-					    <label for="password"><b>password</b></label>
-					    <input type="text" name="password" class="form-control mb-4" placeholder="Enter password" required>
-
-						<div class="float-right">
-		        			<button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
-						    <button type="submit" class="btn btn-success">Update</button>
-						</div>
-					</form>
-				    </div>
-				</div>
+					<div class="float-right">
+	        			<button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+					    <button type="submit" class="btn btn-success">Update</button>
+					</div>
+				</form>
 		    </div>
 		</div>
 	</div>
@@ -89,30 +77,26 @@
 	<div class="modal-dialog" role="document">
 	    <div class="modal-content">
 		    <div class="modal-header btn-light">
-				<div class="row text-secondary ml-1">
-					Delete
+				<div class="row text-primary ml-1">
+					Delete users
 				</div>
 		        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
 		            <span aria-hidden="true">&times;</span>
 		        </button>
 		    </div>
 		    <div class="modal-body">
+			    <form method="post" action="controllers/maincontroller.php">
+					<input type="hidden" name="table" value="users"/>
+					<input type="hidden" name="query" value="delete"/>
+					<input type="hidden" name="id" value="<?=$user["id"]?>"/>
 
-				<div class="card border-primary mb-3">
-				    <div class="card-header text-primary">Delete user</div>
-				    <div class="card-body text-dark">
-				    <form method="post" action="controllers/maincontroller.php">
-						<input type="hidden" name="table" value="users"/>
-						<input type="hidden" name="query" value="delete"/>
-						<input type="hidden" name="id" value="<?=$user["id"]?>"/>
+					Are you sure you want to delete this user?
 
-						<div class="float-right">
-		        			<button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
-						    <button type="submit" class="btn btn-success">Delete</button>
-						</div>
-					</form>
-				    </div>
-				</div>
+					<div class="float-right">
+	        			<button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+					    <button type="submit" class="btn btn-success">Delete</button>
+					</div>
+				</form>
 		    </div>
 		</div>
 	</div>

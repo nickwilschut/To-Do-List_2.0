@@ -1,5 +1,8 @@
 <?php
 
+require("userCRUD.php");
+
+
 $servername = "localhost";
 $username = "root";
 $password = "mysql";
@@ -77,9 +80,6 @@ $conn = null;
 			<div class="card border-primary mb-3" id="users">
 			    <div class="card-header text-primary">
 			    	Users
-					<?php 
-						require("userCRUD.php");
-					?>
 			    	<!-- Button trigger modal -->
 					<button type="button" class="btn btn-success float-right align-middle" data-toggle="modal" data-target="#userInsert">
 						<i class="fas fa-user-plus"></i>
@@ -134,13 +134,11 @@ $conn = null;
 			<div class="card border-primary mb-3" id="Lists">
 			    <div class="card-header text-primary">
 			    	Lists 
-					<?php 
-						require("userCRUD.php");
-					?>
 			    	<!-- Button trigger modal -->
 					<button type="button" class="btn btn-success float-right align-middle" data-toggle="modal" data-target="#userInsert">
 						<i class="fas fa-user-plus"></i>
 					</button>
+					<input class="float-right mr-2" type="text" id="filterInput" onkeyup="FilterTable()" placeholder="Search names."/>
 			    </div>
 			    <div class="card-body text-dark">
 					<table class="table table-striped border">
@@ -192,13 +190,11 @@ $conn = null;
 			<div class="card border-primary mb-3" id="tasks">
 			    <div class="card-header text-primary">
 			    	Tasks 
-					<?php 
-						require("userCRUD.php");
-					?>
 			    	<!-- Button trigger modal -->
 					<button type="button" class="btn btn-success float-right" data-toggle="modal" data-target="#userInsert">
 						<i class="fas fa-user-plus"></i>
 					</button>
+					<input class="float-right mr-2" type="text" id="filterInput" onkeyup="FilterTable()" placeholder="Search names."/>
 			    </div>
 			    <div class="card-body text-dark">
 					<table class="table table-striped border">
