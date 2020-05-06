@@ -1,6 +1,4 @@
-				<!--End page content-->
-			</div>
-		</div>
+		<!--End page content-->
 	</div>			
 </div>
 <!--End container div-->

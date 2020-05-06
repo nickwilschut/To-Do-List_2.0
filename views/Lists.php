@@ -45,12 +45,6 @@ if ($_GET["id"] == null) {
 
 ?>
 
-<div class="col-2 bg-light border-right sidenav">
-	<div class="row">
-		<h1 class="text-secondary mx-auto mt-4">To do lists.</h1>
-	</div>
-</div>
-
 <div class="col-10 main">
 	<!--start page content.-->
 	<div class="row">
