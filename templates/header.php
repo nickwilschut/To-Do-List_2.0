@@ -1,3 +1,44 @@
+<?php
+/**
+Select query to get all the Lists.
+Set database connection varibles
+*/
+$servername = "localhost";
+$username = "root";
+$password = "mysql";
+$dbname = "ToDoList";
+try {
+    $conn = new PDO("mysql:host=$servername;dbname=$dbname", $username, $password);
+    $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+    // Select query.
+    $resultLists = $conn->prepare("SELECT * FROM Lists"); 
+
+	// Execute query.
+    $resultLists->execute();
+
+    $result = $resultLists->setFetchMode(PDO::FETCH_ASSOC); 
+}
+
+catch(PDOException $e) {
+    echo "Error: " . $e->getMessage();
+}
+// close connection.
+$conn = null;
+?>
+
+<!-- Set styling for the sidenav. -->
+<style>
+.sidenav {
+	position: fixed;
+	height: 100%;
+	overflow: auto;
+}	
+
+.main {
+	margin-left: 17%;
+}
+</style>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -18,18 +59,29 @@
 			<div class="row">
 				<h1 class="text-secondary mx-auto mt-4">To do lists.</h1>
 			</div>
+			<div>
+				<table class="table table-hover border">
+				  	<thead class="bg-light">
+					    <tr>
+					    	<th>name</th>
+					    </tr>
+					</thead>
+				    <tbody>
+					    <!-- Loop through all the results and put them in a table. -->
+					    <?php 
+						  	foreach ($resultLists as $list) {
+						?>
+						<tr>
+							<th>
+								<!-- display the list name(s). -->
+								<p class="text-secondary"><?=$list["name"]?></p>
+							</th>
+						</tr>
+						<?php
+						  	}
+						?> 
+				  	</tbody>
+				</table>
+			</div>
 		</div>	
 		<!--Start page-->
-
-
-<style>
-.sidenav {
-	position: fixed;
-	height: 100%;
-	overflow: auto;
-}	
-
-.main {
-	margin-left: 17%;
-}
-</style>

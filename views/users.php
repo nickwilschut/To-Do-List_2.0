@@ -1,6 +1,11 @@
 <?php
+// Require create modal.
 require("createModal.php");
 
+/**
+Select query to get all the users.
+Set database connection varibles
+*/
 $servername = "localhost";
 $username = "root";
 $password = "mysql";
@@ -8,8 +13,10 @@ $dbname = "ToDoList";
 try {
     $conn = new PDO("mysql:host=$servername;dbname=$dbname", $username, $password);
     $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+    // Select query.
     $resultUsers = $conn->prepare("SELECT * FROM users"); 
 
+    // Execute query.
     $resultUsers->execute();
 
     $result = $resultUsers->setFetchMode(PDO::FETCH_ASSOC); 
@@ -18,6 +25,7 @@ try {
 catch(PDOException $e) {
     echo "Error: " . $e->getMessage();
 }
+// close connection.
 $conn = null;
 ?>
 
@@ -27,9 +35,10 @@ $conn = null;
 		<div class="col-12 mt-4">
 			<div class="alert alert-primary" role="alert">
 				<div class="row">
-					<a href="#"><i class="fas fa-users ml-2"></i> Users</a>
+					<!-- navigation -->
+					<a href="views/Lists.php"><i class="fas fa-clipboard-list ml-2"></i> Lists</a>
 					<a href="views/Tasks.php"><i class="fas fa-paste ml-5"></i> Tasks</a>
-					<a href="views/Lists.php"><i class="fas fa-clipboard-list ml-5"></i> Lists</a>
+					<a href="#"><i class="fas fa-users ml-5"></i> Users</a>
 				</div>
 			</div>
 		</div>
@@ -58,6 +67,7 @@ $conn = null;
 						    </tr>
 						</thead>
 					    <tbody>
+					    	<!-- Loop through all the results and put them in a table. -->
 						    <?php 
 							  	foreach ($resultUsers as $user) {
 							?>
@@ -66,6 +76,7 @@ $conn = null;
 								<td><?=$user["name"]?></td>
 						    	<td><?=$user["username"]?></td>
 						    	<td>
+						    		<!-- links to update and delete + id. -->
 									<a class="btn btn-warning text-white mt-1" href="views/updateUser.php?id=<?php echo $user["id"]; ?>"><i class="fas fa-edit"></i></a>
 								  	<a class="btn btn-danger mt-1" href="views/deleteUser.php?id=<?php echo $user["id"]; ?>"><i class="far fa-trash-alt"></i></a>
 							  	</td>	
@@ -81,8 +92,8 @@ $conn = null;
 	</div>
 </div>
 
-
 <script>
+	// filter function for the table.
 	function FilterTable() {
 		var input, filter, table, tr, td, i, txtValue;
 			input = document.getElementById("filterInput");

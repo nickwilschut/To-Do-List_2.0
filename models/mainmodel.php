@@ -1,6 +1,8 @@
 <?php
 
-// Create user function
+/**
+This function is used for inserting users into the database.
+*/
 function createUser($data) {
 	$servername = "localhost";
 	$username = "root";
@@ -29,7 +31,9 @@ function createUser($data) {
 	$conn = null;
 }
 
-// Create List function
+/**
+This function is used for inserting Lists into the database.
+*/
 function createList($data) {
 	$servername = "localhost";
 	$username = "root";
@@ -57,7 +61,9 @@ function createList($data) {
 	$conn = null;
 }
 
-// Create Task function
+/**
+This function is used for inserting Tasks into the database.
+*/
 function createTask($data) {
 	$servername = "localhost";
 	$username = "root";
@@ -88,7 +94,9 @@ function createTask($data) {
 	$conn = null;
 }
 
-// Update user function
+/**
+This function is used to update users from the database.
+*/
 function updateUser($data) {
 	$servername = "localhost";
 	$username = "root";
@@ -118,7 +126,9 @@ function updateUser($data) {
 	$conn = null;
 }
 
-// Update List function
+/**
+This function is used to update Lists from the database.
+*/
 function updateList($data) {
 	$servername = "localhost";
 	$username = "root";
@@ -147,7 +157,9 @@ function updateList($data) {
 	$conn = null;
 }
 
-// Update task function
+/**
+This function is used to update Tasks from the database.
+*/
 function updateTask($data) {
 	$servername = "localhost";
 	$username = "root";
@@ -179,7 +191,9 @@ function updateTask($data) {
 	$conn = null;
 }
 
-// delete function
+/**
+This function is used to delete items from the database.
+*/
 function delete($data) {
 	$servername = "localhost";
 	$username = "root";
