@@ -26,18 +26,7 @@ catch(PDOException $e) {
 $conn = null;
 ?>
 
-<!-- Set styling for the sidenav. -->
-<style>
-.sidenav {
-	position: fixed;
-	height: 100%;
-	overflow: auto;
-}	
 
-.main {
-	margin-left: 17%;
-}
-</style>
 
 <!DOCTYPE html>
 <html>
@@ -85,3 +74,16 @@ $conn = null;
 			</div>
 		</div>	
 		<!--Start page-->
+
+<!-- Set styling for the sidenav. -->
+<style>
+.sidenav {
+	position: fixed;
+	height: 100%;
+	overflow: auto;
+}	
+
+.main {
+	margin-left: 17%;
+}
+</style>
