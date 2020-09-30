@@ -14,7 +14,7 @@ function createUser($data) {
 	    $conn = new PDO("mysql:host=$servername;dbname=$dbname", $username, $password);
 	    $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
      
-	    $sql = "INSERT INTO $table (Name, Username, Password) VALUES (:name, :username, :password)";
+	    $sql = "INSERT INTO $table (Name, username, password) VALUES (:name, :username, :password)";
 
         $query = $conn->prepare($sql);
         
