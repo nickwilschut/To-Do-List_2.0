@@ -111,7 +111,7 @@ if ($_GET["id"] == null) {
 						    	<td><?=$task["description"]?></td>
 						    	<td><?=$task["status"]?></td>
 						    	<td><?=$task["duration"]?></td>
-						    	<td><?=$task["List_id"]?></td>
+						    	<td><?=$task["list_id"]?></td>
 						      	<td>
 						      		<!-- links to List, update and delete + id. -->
 									<a class="btn btn-primary mt-1" href="Lists.php?id=<?php echo $task["List_id"]; ?>"><i class="far fa-eye"></i></a>
